@@ -3,31 +3,36 @@
   body{
     margin:0px;
   }
-  .header{
+  header{
     background-color: #FEC6C9;
     text-align: center;
     padding:20px;
   }
-  .topnav{
+  nav {
+    width: 100%;
+    text-align: center;
     background-color: #FEFBC6;
     overflow:hidden;
-
+    > li {
+      float: none;
+      display: inline-block;
+    }
   }
-  .topnav a{
+  nav a{
     text-align: center;
-    float:left;
     padding: 5px 30px;
     color: gray;
     text-decoration: none;
     font-size: 24px;
   }
-  .topnav a:hover{
+  nav a:hover{
     background-color: #FEDFC6;
   }
   .clearfix{
     overflow: auto;
   }
-  img{
+
+  #macaron{
     float: right;
     margin-top:30px;
     margin-right: 250px;
@@ -41,27 +46,26 @@
     margin-left:200px;
     margin-right:200px;
   }
-  .footer{
+  footer{
     background-color: #FEC6C9;
-    padding:7.5vh;
-    margin: 0px;
+    display: block;
+    height:200px;
   }
 </style>
 <html>
   <body>
-    <div class="header">
-      <h1>Just A Bite</h1>
-    </div>
-
-    <div class="topnav">
-      <a href="C:/Users/vanes/Documents/GitHub/vkirch.github.io/index.html">Home</a>
-      <a href="C:/Users/vanes/Documents/GitHub/vkirch.github.io/recipes.html">Recipes</a>
-      <a href="#">Techniques</a>
-      <a href="#">About</a>
-    </div>
+    <header>
+      <img src="C:\Users\vanes\Documents\GitHub\vkirch.github.io\JustABite.png" width="30%" alt="title">
+    </header>
+    <nav>
+      <a href="C:\Users\vanes\Documents\GitHub\vkirch.github.io\index.html">Home</a>
+      <a href="C:\Users\vanes\Documents\GitHub\vkirch.github.io\recipes.html">Recipes</a>
+      <a href="C:\Users\vanes\Documents\GitHub\vkirch.github.io\techniques.html">Techniques</a>
+      <a href="C:\Users\vanes\Documents\GitHub\vkirch.github.io\about.html">About</a>
+    </nav>
 
     <div class=clearfix>
-      <img src="https://31p86334w2bvkz0249eyr0cr-wpengine.netdna-ssl.com/wp-content/uploads/2015/08/homemade-french-macarons.jpg" width="20%" alt="menu cake">
+      <img id='macaron' src="https://31p86334w2bvkz0249eyr0cr-wpengine.netdna-ssl.com/wp-content/uploads/2015/08/homemade-french-macarons.jpg" width="20%" alt="menu cake">
       <h2>Ingredients</h2>
       <ul>
         <li>200g confectioners' sugar (close to 2 cups)</li>
@@ -105,8 +109,8 @@
         macarons keep well covered at room temperature or in the refrigerator for up to 1 week.</li>
       <ol>
     </div>
-    <div class="footer">
+    <footer>
 
-    </div>
+    </footer>
   </body>
 </html>

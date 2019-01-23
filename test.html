@@ -1,21 +1,43 @@
 <!doctype html>
 <style>
-body {
-  padding: 0;
-  margin: 0;
-}
-.header {
-  width: 100vw;
-  height: 20vh;
-  background: red;
-}
-
+  body{
+    background-color: gray;
+  }
+  header{
+    display: block;
+    background-color: blue;
+    height: 100px;
+  }
+  #main{
+    background-color: purple;
+    display: flex;
+    flex-flow: column;
+  }
+  #main > article{
+    background-color: yellow;
+    padding: 5px;
+    flex: 3 1 80%;
+    order:2;
+  }
+  #main > nav{
+    background-color: orange;
+    padding: 5px;
+    flex: 1 6 20%;
+    order:1;
+  }
+  footer{
+    display: block;
+    background-color: blue;
+  }
 </style>
 
 <html>
-<div class="header">
-  <h1>Just a Bite</h1>
-</div>
-<div class="full-height">
-</div>
+  <body>
+    <header>Header</header>
+    <div id='main'>
+      <article>article</article>
+      <nav>nav</nav>
+    </div>
+    <footer>Footer</footer>
+  </body>
 </html>
