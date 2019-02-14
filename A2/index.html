@@ -2,6 +2,7 @@
 <html>
 
   <head>
+    <meta name = "viewport" content="width=device-width, initial-scale=1">
     <title>Calculator</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <script  type="text/javascript" src="calculator.js"></script>
@@ -9,6 +10,7 @@
   </head>
 
   <body>
+    <center>
       <table>
             <tr>
               <td class="heading">
@@ -23,11 +25,12 @@
 
         <!-- buttons section of the Calculator -->
         <tr>
-          <td>
-            <input type="button" value=" CE " onclick="clearScreen()" style="background: red; color: white;">
+          <td id='button-pad'>
+            <input type="button" value=" CE " onclick="clearScreen()" style="background: #e14141; color: white;">
             <input type="button" value=" &#247; " onclick="getOperand('/')">
             <input type="button" value=" x " onclick="getOperand('x')">
             <input type="button" value=" &#8592; " onclick="backspace()" style="color: red;">
+            </div>
             <br>
             <input type="button" value=" 1 " onclick="getNumber(1)">
             <input type="button" value=" 2 " onclick="getNumber(2)">
@@ -47,12 +50,12 @@
             <input type="button" value=" +/- " onclick="getOperand('+/-')">
             <input type="button" value=" 0 " onclick="getNumber(0)">
             <input type="button" value=" . " onclick = "decimal()">
-            <input type="button" value=" = " onclick="compute()" style="color:white; background: green;">
+            <input type="button" value=" = " onclick="compute()" style="color:white; background: #8fbf73;">
             <br>
           </td>
         </tr>
       </table>
-
+    </center>
   </body>
 
 </html>
