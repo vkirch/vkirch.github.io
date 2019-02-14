@@ -43,8 +43,8 @@ input[type=button]:hover{
   cursor: pointer;
 }
 
-@media only screen and (max-width: 600px) {
-  body {
-    background-color: lightblue;
+@media only screen and (max-width: 600px) and (orientation: landscape) {
+  table, #input, #answer{
+    width: 100%;
   }
 }
