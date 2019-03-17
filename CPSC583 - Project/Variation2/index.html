@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="utf-8">
+    <head>
+        <title> D3 Final Project </title>
+        <link rel="stylesheet" type="text/css" href="style.css" />   <!-- link the CSS file to style this page -->
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+        <script type="text/javascript" src="main.js"></script>
+    </head>
+    <body>
+        <h1>D3 Final Project</h1>
+        <div id="div_page_desc">
+            <p>Demonstrates the correlation between fertility rate and life expectancy between different continental regions.</p>
+        </div>
+        <div id="div_visuals">
+            <div id="div_data_desc">
+                <h2>Dataset: Time Series</h2>
+            </div>
+            <svg id="vis" class="svg_boxes"></svg>
+
+
+            <div id="div_buttons">
+                <button id="button_life_expectancy" onclick="changeBarLengthLife('1960', 100)" style = "color: white;">Life Expectancy</button>
+                <button id="button_fertility_rate" onclick="changeBarLengthFertility('1960', 8)" style = "color: white;">Fertility Rate</button>
+            </div>
+
+        </div>
+    </body>
+</html>
