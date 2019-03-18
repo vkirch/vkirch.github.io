@@ -134,7 +134,7 @@ function setUpFertilityBars()
 function changeBarLengthLife(attr, maxAttrValue){
     console.log("In changing bar lengths for life data");
     for (var i = 0; i < _data_life.length; i++){
-        var newLength = mapValue(_data_life[i][attr], 0, maxAttrValue, _vis_width/2, (_vis_width/3) - PADDING_FOR_LABELS);
+        var newLength = mapValue(_data_life[i][attr], 0, maxAttrValue, 0, (_vis_width/2) - PADDING_FOR_LABELS);
         var bar = document.getElementById("row_L_" + i);
 
         var oldX = bar.getAttribute("x") ;
@@ -164,21 +164,19 @@ function changeBarLengthLife(attr, maxAttrValue){
  */
 function changeBarLengthFertility(attr, maxAttrValue){
     for (var i = 0; i < _data_fertility.length; i++){
-        var newLength = mapValue(_data_fertility[i][attr], 0, maxAttrValue, 0, _vis_width/3 - PADDING_FOR_LABELS);
-        newLength = -1*newLength;
-        console.log(newLength);
+        var newLength = mapValue(_data_fertility[i][attr], 0, maxAttrValue, 0, _vis_width/2 - PADDING_FOR_LABELS);
         var bar = document.getElementById("row_F_" + i);
 
         var oldX = bar.getAttribute("x"); //- newLength; //FOR NEW FUNCTION
         var oldLength = bar.getAttribute("width");
-        var newX = oldX;
+        var newX = oldX - newLength;
 
         bar.setAttribute("x", oldX);
         bar.setAttribute("width", oldLength);
         
 
         var animate = "<animate id='animate_bar_" + i + "' attributeName='x' from='" + oldX + "' " +
-            "to='" + newX + "' dur='1s' begin='indefinite'" +
+            "to='" + oldX + "' dur='1s' begin='indefinite'" +
             "repeatCount='1' fill='freeze'></animate>" +
             "<animate attributeName='width' from='"+ oldLength +"' to='"+ newLength +"' dur='1s' " +
             "begin='animate_bar_"+ i +".begin' fill='freeze'></animate>" +
