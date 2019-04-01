@@ -108,15 +108,12 @@
                     .style("opacity", 1)
                     .style("stroke","white")
                     .style("stroke-width",);
-                console.log("in map, selected country: " + d.properties['name']);
-                onMouseOverLink(d.properties['name'])
             })
             .on('mouseout', function(d){
                 d3.select(this)
                     .style("opacity", 0.8)
                     .style("stroke","white")
                     .style("stroke-width",0.3);
-                onMouseOutLink(d.properties['name'])
             });
         map.highlight = function(data, type){
             this.selectAll('path')
