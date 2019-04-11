@@ -149,6 +149,47 @@ function setupLifeBars(_data_life) {
         .attr("style", "font-size: 8px")
         .call(d3.axisBottom(xScale_L)); //Create an axis component with d3
 
+    // console.log(lifeBarGroup.select(".x axis"));
+    //
+    // lifeBarGroup
+    //     .append("g")
+    //     .attr("class", "x-axis-label")
+    //     .attr("transform", "translate("+((_vis_width/2)*1.5)+","+(_vis_height + 10) + ")")
+    //     .append("text")
+    //     .text("Life Expectancy")
+    //     .style("fill", "white")
+    //     .style("font-size", "20px");
+
+    let body = d3.select("body")
+        .append("p")
+        .text("Life Expectancy")
+        .style("position", "absolute")
+        .style("top", function(d){
+            console.log((parseInt(d3.select("#vis").attr("margin-left"))));
+            return ((_vis_height + 10) + (parseInt(d3.select("#vis").style("margin-left"))) * 2) + "px";
+        })
+        .style("left", function(d){
+            return (((_vis_width/2)*1.5) + (parseInt(d3.select("#vis").style("margin-top"))) * 3) + "px";
+        })
+        .style("font-size", "20px")
+        .style("margin", "5px")
+        .style("padding", "15px");
+
+    d3.select("body")
+        .append("p")
+        .text("Fertility Rate")
+        .style("position", "absolute")
+        .style("top", function(d){
+            console.log((parseInt(d3.select("#vis").attr("margin-left"))));
+            return ((_vis_height + 10) + (parseInt(d3.select("#vis").style("margin-left"))) * 2) + "px";
+        })
+        .style("left", function(d){
+            return ((_vis_width/6) + (parseInt(d3.select("#vis").style("margin-top"))) * 3) + "px";
+        })
+        .style("font-size", "20px")
+        .style("margin", "5px")
+        .style("padding", "15px");
+
     /**This function causes the yellow bars in set up mode to not appear**/
   /*  lifeBarGroup
         .append("path")
@@ -290,77 +331,3 @@ function setupLifeBars(_data_life) {
         return (value - origMin) * (newMax - newMin) / (origMax - origMin) + newMin;
     }
 
-    function setUpLifeScatter() {
-
-        /***WORKING ON THIS***/
-        var lifeScatterGroup = _vis.selectAll("g.life-scatter")
-            .data(_data_africa_life)
-            .enter()
-            .append("g")
-            .attr("class", "life-bar")
-            .attr("transform", "");
-    }
-      /*
-        //SETTING UP SCATTER PLOT
-        // setup x
-        var xValue = function(d) { return d["Year"];}, // data -> value
-            xScale = d3.scaleLinear().range([0, height/2-100]), // value -> display
-            xMap = function(d) { return xScale(xValue(d));}, // data -> display
-            xAxis = d3.axisBottom().scale(xScale);
-
-        // setup y
-        var yValue = function(d) { return d["Life expectancy at birth (years) male"];}, // data -> value
-            yScale = d3.scaleLinear().range([height/2-100, 0]), // value -> display
-            yMap = function(d) { return yScale(yValue(d));}, // data -> display
-            yAxis = d3.axisLeft().scale(yScale);
-
-        // don't want dots overlapping axis, so add in buffer to data domain
-        xScale.domain([35, 90]);
-        yScale.domain([35, 90]);
-
-        // x-axis
-        scatterplot.append("g")
-            .attr("class", "x axis")
-            .attr("transform", "translate(0," + (height/2-100) + ")")
-            .call(xAxis)
-            .append("text")
-            .attr("class", "label")
-            .attr("x", width)
-            .attr("y", -6)
-            .style("text-anchor", "end")
-            .text("Calories");
-
-        // y-axis
-        scatterplot.append("g")
-            .attr("class", "y axis")
-            .call(yAxis)
-            .append("text")
-            .attr("class", "label")
-            .attr("transform", "rotate(-90)")
-            .attr("y", 6)
-            .attr("dy", ".71em")
-            .style("text-anchor", "end")
-            .text("Protein (g)");
-    }
-*/
-/*
-
-        // draw dots
-        scatterplot.selectAll(".dot")
-        .data(who)
-        .enter().append("circle")
-        .attr("class", d => { return "dot COUNTRY-"+d.Country; } )
-        .attr("r", 3.5)
-        .attr("cx", xMap)
-        .attr("cy", yMap)
-        .style("fill", function(d) { return color(fertilityById[d.id]);})
-
-        .on("mouseover", function(d) {
-            console.log("in scatter plot, selected country: ");
-            console.log(d.Country);
-            _dispatcher.call("mouseover", this, [d], "default");
-        })
-        .on("mouseout", function(d) {
-            _dispatcher.call("mouseout", this, [d], "default");
-        });
-*/
