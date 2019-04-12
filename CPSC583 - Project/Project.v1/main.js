@@ -166,14 +166,14 @@ function setupLifeBars(_data_life) {
         .style("position", "absolute")
         .style("top", function(d){
             console.log((parseInt(d3.select("#vis").attr("margin-left"))));
-            return ((_vis_height + 10) + (parseInt(d3.select("#vis").style("margin-left"))) * 2) + "px";
+            return ((_vis_height-25) + (parseInt(d3.select("#vis").style("margin-left"))) * 2) + "px";
         })
         .style("left", function(d){
             return (((_vis_width/2)*1.5) + (parseInt(d3.select("#vis").style("margin-top"))) * 3) + "px";
         })
-        .style("font-size", "20px")
-        .style("margin", "5px")
-        .style("padding", "15px");
+        .style("font-size", "20px");
+        //.style("margin", "5px")
+        //.style("padding", "5px");
 
     d3.select("body")
         .append("p")
@@ -181,14 +181,14 @@ function setupLifeBars(_data_life) {
         .style("position", "absolute")
         .style("top", function(d){
             console.log((parseInt(d3.select("#vis").attr("margin-left"))));
-            return ((_vis_height + 10) + (parseInt(d3.select("#vis").style("margin-left"))) * 2) + "px";
+            return ((_vis_height-25) + (parseInt(d3.select("#vis").style("margin-left"))) * 2) + "px";
         })
         .style("left", function(d){
             return ((_vis_width/6) + (parseInt(d3.select("#vis").style("margin-top"))) * 3) + "px";
         })
-        .style("font-size", "20px")
-        .style("margin", "5px")
-        .style("padding", "15px");
+        .style("font-size", "20px");
+        //.style("margin", "5px")
+        //.style("padding", "5px");
 
     /**This function causes the yellow bars in set up mode to not appear**/
   /*  lifeBarGroup
